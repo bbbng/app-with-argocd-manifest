@@ -1,0 +1,6 @@
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: local-storage
+provisioner: kubernetes.io/no-provisioner # this storage class does not support dynamic provisioning
+volumeBindingMode: WaitForFirstConsumer # This is the important part. enable volume topology aware scheduling.

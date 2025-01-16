@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: db-sfs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+  serviceName: mysql-service
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+        - name: mysql-container
+          image: mysql:lts
+          volumeMounts:
+            - name: mysqldata
+              mountPath: /var/lib/mysql
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3306
+          envFrom:
+            - secretRef:
+                name: mysql-secret # db-secret.yaml 파일 필요
+          env:
+            - name: MYSQL_DATABASE
+              value: k8sdb
+            - name: MYSQL_USER
+              value: k8suser
+  volumeClaimTemplates:
+    - metadata:
+        name: mysqldata
+      spec:
+        accessModes: [ "ReadWriteOnce" ]
+        storageClassName: local-storage
+        resources:
+          requests:
+            storage: 200Mi
