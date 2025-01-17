@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
       - name: app-with-actions
-        image: hgreen726/app-with-actions:61f7631cf604c0bcce0340073c16922dc7013072
+        image: hgreen726/app-with-actions:48be657c10db283082e39a258287d2147c86e621
