@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
       - name: app-with-actions
-        image: 724772050614.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-test:ad1b04aa8963ef9697b121d1d81a6d6a6a1e0942
+        image: hgreen726/app-with-actions:ad1b04aa8963ef9697b121d1d81a6d6a6a1e0942
