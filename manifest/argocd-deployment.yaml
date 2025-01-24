@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
       - name: app-with-actions
-        image: hgreen726/app-with-actions:55ed58dd334d06b13dbd777b2a8403be4c9ea966
+        image: 724772050614.dkr.ecr.ap-northeast-2.amazonaws.com/app-with-actions:febb7da365af51f384307524f64e2671f71e6c61
