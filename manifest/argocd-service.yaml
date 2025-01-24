@@ -3,6 +3,7 @@ kind: Service
 metadata:
   annotations:
     external-dns.alpha.kubernetes.io/hostname: tt.k.temsa.click
+    service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing
   name: argocd-service
 spec:
   selector:
