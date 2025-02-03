@@ -18,6 +18,7 @@ kind: Ingress
 metadata:
   name: argocd-ingress
   annotations:
+    alb.ingress.kubernetes.io/aws-load-balancer-healthcheck-path: /api/actions
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}, {"HTTP":80}]'
