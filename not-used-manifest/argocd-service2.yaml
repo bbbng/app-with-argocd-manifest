@@ -14,7 +14,7 @@ spec:
 ---
 
 apiVersion: networking.k8s.io/v1
-kind: Ingress
+kind: Ingress # ingress alb는 rest api와 호환되지 않는다. 주의.
 metadata:
   name: argocd-ingress
   annotations:
