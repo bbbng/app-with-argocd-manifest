@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: t1-mealstagram-app-deployment
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: t1-mealstagram-app
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: t1-mealstagram-app
+    spec:
+      containers:
+      - name: t1-mealstagram-app-container
+        image: hgreen726/t1-mealstagram:latest
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        env:
+        - name: DATABASE_URL
+          value: "jdbc:mysql://192.168.219.94:3306/mealstagram?serverTimezone=Asia/Seoul"
+        - name: FILE_STORAGE_PATH
+          value: "/tmp/s3_data"
+        volumeMounts:
+        - name: temp-storage
+          mountPath: /tmp/s3_data
+      volumes:
+      - name: temp-storage
+        emptyDir: {}
