@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: t1-mealstagram-app-deployment
 spec:
-  replicas: 5
+  replicas: 3
   selector:
     matchLabels:
       app.kubernetes.io/name: t1-mealstagram-app
