@@ -7,10 +7,12 @@ spec:
   selector:
     matchLabels:
       app.kubernetes.io/name: t1-mealstagram-app
+      app.kubernetes.io/instance: t1-mealstagram-app
   template:
     metadata:
       labels:
         app.kubernetes.io/name: t1-mealstagram-app
+        app.kubernetes.io/instance: t1-mealstagram-app
     spec:
       containers:
       - name: t1-mealstagram-app-container

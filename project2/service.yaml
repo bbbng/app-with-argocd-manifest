@@ -7,9 +7,11 @@ metadata:
   name: t1-mealstagram-service
   labels:
     app.kubernetes.io/name: t1-mealstagram-app
+    app.kubernetes.io/instance: t1-mealstagram-app
 spec:
   selector:
     app.kubernetes.io/name: t1-mealstagram-app
+    app.kubernetes.io/instance: t1-mealstagram-app
   type: LoadBalancer
   ports:
   - name: http
