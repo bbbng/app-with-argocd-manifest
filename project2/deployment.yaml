@@ -14,9 +14,11 @@ spec:
     spec:
       containers:
       - name: t1-mealstagram-app-container
-        image: hgreen726/t1-mealstagram:latest
+        image: hgreen726/t1-mealstagram:v2
         ports:
         - containerPort: 8080
+          protocol: TCP
+        - containerPort: 9090
           protocol: TCP
         env:
         - name: DATABASE_URL
