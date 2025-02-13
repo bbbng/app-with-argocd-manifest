@@ -27,9 +27,9 @@ spec:
                 name: mysql-secret # db-secret.yaml 파일 필요
           env:
             - name: MYSQL_DATABASE
-              value: k8sdb
+              value: mealstagram
             - name: MYSQL_USER
-              value: k8suser
+              value: admin
   volumeClaimTemplates:
     - metadata:
         name: mysqldata

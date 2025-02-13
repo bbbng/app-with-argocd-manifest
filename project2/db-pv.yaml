@@ -1,0 +1,16 @@
+# eks의 dynamic provisioning을 위해 아래 내용은 사용하지 않는다.
+apiVersion: v1
+kind: PersistentVolume # 오류가 발생할 경우 삭제하고 재생성하면 된다. pv 삭제에 실패했다면 pvc를 삭제했는지 확인하자.
+metadata:
+  name: db-pv
+  labels:
+    type: local
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 500Mi
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: local-storage
+  hostPath: # local과의 차이: hostPath는 폴더를, local은 디스크나 파티션을 마운트하는 것.
+    path: /tmp

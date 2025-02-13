@@ -1,0 +1,12 @@
+# kind: StorageClass
+# apiVersion: storage.k8s.io/v1
+# metadata:
+  # name: local-storage
+# allowVolumeExpansion: true
+# # provisioner: kubernetes.io/no-provisioner # this storage class does not support dynamic provisioning
+# provisioner: ebs.csi.aws.com
+# volumeBindingMode: WaitForFirstConsumer # This is the important part. enable volume topology aware scheduling.
+# parameters:
+#   type: gp3
+#   allowAutoIOPSPerGBIncrease: 'true'
+#   encrypted: 'false'

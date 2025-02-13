@@ -24,7 +24,7 @@ spec:
           protocol: TCP
         env:
         - name: DATABASE_URL
-          value: "jdbc:mysql://192.168.219.94:3306/mealstagram?serverTimezone=Asia/Seoul"
+          value: "jdbc:mysql://mysql-service:3306/mealstagram?serverTimezone=Asia/Seoul"
         - name: FILE_STORAGE_PATH
           value: "/tmp/s3_data"
         volumeMounts:
